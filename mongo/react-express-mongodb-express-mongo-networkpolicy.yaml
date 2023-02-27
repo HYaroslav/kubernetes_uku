@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  creationTimestamp: null
+  name: react-express-mongodb-express-mongo
+spec:
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              io.kompose.network/react-express-mongodb-express-mongo: "true"
+  podSelector:
+    matchLabels:
+      io.kompose.network/react-express-mongodb-express-mongo: "true"
